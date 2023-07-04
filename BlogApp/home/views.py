@@ -8,7 +8,7 @@ def home(request):
     return render(request, 'home/home.html')
     # return HttpResponse('This is Home')
 
-def contact(request):
+def contact(request): 
     if request.method=='POST':
         name=request.POST['name']
         email=request.POST['email']

@@ -1,22 +1,27 @@
 {% extends 'base.html' %}
 {% block title %}
-Contact US
+Blog
 {% endblock title %}
 {% block body %}
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+<div class="container my-3">
+  <h2>Coding Articles:</h2>
+{% for post in allPost %}
+  <div class="row g-0 border rounded overflow-hidden flex-md-row my-4 shadow-sm h-md-250 position-relative __web-inspector-hide-shortcut__">
+    <div class="col p-4 d-flex flex-column position-static">
+      <strong class="d-inline-block mb-2 text-primary-emphasis">Article by {{post.author}}</strong>
+      <h3 class="mb-0">{{post.title}}</h3>
+      <div class="mb-1 text-body-secondary">{{post.datetime}}</div>
+      <p class="card-text mb-auto">{{post.content| truncatechars:500}}</p>
+      <div class="my-2">
+      <a href="/blog/{{post.slug}}" role="button" class="btn btn-primary">
+        Continue reading
+      </a>
+    </div>
+    </div>
+    <div class="col-auto d-none d-lg-block">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  {% endfor %}
+
+</div>
 {% endblock body %}
