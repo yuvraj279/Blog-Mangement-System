@@ -1,16 +1,47 @@
 {% extends 'base.html' %}
 {% block title %}Blog Post{% endblock title %}
 {% block body %}
+{% load humanize %}
 <div class="col-md-8">
-  <h3 class="pb-4 mb-4 fst-italic border-bottom">
-    From the Firehose
-  </h3>
-
   <div class="container my-3">
     <h2 class="display-5 link-body-emphasis mb-1">{{post.title}}</h2>
     <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.author}}</a></p>
 
     <p>{{post.content}}</p>
     <hr>
+</div>
+<div class="container">
+  
+  <h2>Comments({{comments.count}})</h2>
+  <div class="my-2">
+  
+    {% if user.is_authenticated %}
+    <form action="/blog/postComment" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Post Comment </label>
+            <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+        </div>
+        <input type="hidden" name="postSno" value="{{post.sno}}">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% else %}
+    Please login to post a comment 
+    {% endif %}
+
+
+</div>
+  
+  {% for comment in comments %}
+  <div class="row my-3">
+  <div class="col-md-1 ">
+    <img class="rounded mx-auto d-block w-100 p-2" src="/static/user1.png"  alt="user">
+  </div>
+  <div class="col-md-11 "><b>{{comment.user.username}}</b> <span class="badge badge-secondary ">{{comment.timestamp | naturaltime}}</span>
+    <div>{{comment.comment}}</div>
+    </div>
+  </div>
+  {% endfor %}
+  
 </div>
 {% endblock body %}

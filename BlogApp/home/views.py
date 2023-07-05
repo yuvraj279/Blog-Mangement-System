@@ -38,6 +38,7 @@ def search (request):
     return render(request, 'home/search.html',params)
     # return HttpResponse('This is search')
 
+# Authenntication Api's 
 def handleSignup(request):
     if(request.method=='POST'):
         # Get The post paramaters
