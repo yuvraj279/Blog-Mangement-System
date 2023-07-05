@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "275056bf-cce0-4bd2-8ea6-4a97a909ccb6",
+		"name": "Blog Mnagement App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jul 2023 15:12:11 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.9.5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Content-Length",
+							"value": "7945"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=c004scAVXDYcJQOLLSYlEWdyuSjF8BQ1; expires=Wed, 03 Jul 2024 15:12:11 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "<!doctype html><html lang=\"en\"><head>\n<!-- Required meta tags -->\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n<!-- Bootstrap CSS -->\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n<title>Home </title>\n</head>\n<body>\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n        <a class=\"navbar-brand\" href=\"/\">Blog App</a>\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <span class=\"navbar-toggler-icon\"></span>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item active\">\n                    <a class=\"nav-link\" href=\"/\">Home \n                        <span class=\"sr-only\">(current)</span>\n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/about\">About</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/contact\">Contact Us</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" href=\"/blog\">Blog</a>\n                </li>\n            </ul>\n            <form method=\"get\" action =\"/search\" class=\"form-inline my-2 my-lg-0 mx-3\">\n                <input name=\"query\" id= \"query\" class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n            </form>\n        </div>\n        <!-- Button to trigger Login  Modal modal -->\n        <button type=\"button\" class=\"btn btn-success mx-2\" data-toggle=\"modal\" data-target=\"#loginmodal\">\n        Log In\n      </button>\n        <!-- Button to trigger Signup Modal modal -->\n        <button type=\"button\" class=\"btn btn-success mx-2\" data-toggle=\"modal\" data-target=\"#signupmodal\">\n        Sign Up\n      </button>\n    </nav>\n    <!-- Sign up Modal -->\n    <div class=\"modal fade\" id=\"signupmodal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"signupmodal\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"signupmodaltitle\">SignUp Here</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <form action='/signup' method='post'>\n                        <div class=\"form-group\">\n                            <label for=\"username\">UserName</label>\n                            <input type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" placeholder=\"User Name (Lower Case and Alpha Numneric)\" Required >\n          \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"firstname\">FirstName</label>\n                            <input type=\"text\" class=\"form-control\" id=\"firstname\" name=\"firstname\" placeholder=\"First Name\" Required>\n          \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"lastname\">LastName</label>\n                            <input type=\"text\" class=\"form-control\" id=\"lastname\" name=\"lastname\" placeholder=\"Last Name\" Required>\n          \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"phone\">Phone No.</label>\n                            <input type=\"phone\" class=\"form-control\" id=\"phone\" name=\"phone\" placeholder=\"Eneter Your Num\" Required>\n          \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"email\">Email address</label>\n                            <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"name@example.com\" Required>\n          \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"pass1\">Password</label>\n                            <input class=\"form-control\" id=\"pass1\" name=\"pass1\" placeholder=\"Enter Your Password\" Required></input>\n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"pass2\">Comfirm Password</label>\n                            <input class=\"form-control\" id=\"pass2\" name=\"pass2\" placeholder=\"Enter Your Password Again\" Required></input>\n                        </div>\n                        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"JMKW6vOtwRPVTs2m2QAKVfGywfZOF5XJLCAQoxeejkDXs8GXDyoVp1JWQX8jDwDA\">\n                        <button type=\"submit\" class=\"btn btn-primary\" >Submit</button>\n                    </form>\n                </div>\n                <div class=\"modal-footer\">\n      </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"modal fade\" id=\"loginmodal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"loginmodal\" aria-hidden=\"true\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header\">\n                    <h5 class=\"modal-title\" id=\"loginmodaltitle\">Log In Here</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <form action='/login' method='post'>\n                        <div class=\"form-group\">\n                            <label for=\"username\">UserName</label>\n                            <input type=\"text\" class=\"form-control\" id=\"loginusername\" name=\"loginusername\" placeholder=\"User Name\" Required>\n          \n                        </div>\n                        <div class=\"form-group\">\n                            <label for=\"pass1\">Your Password</label>\n                            <input class=\"form-control\" id=\"loginpassword\" name=\"loginpassword\" placeholder=\"Enter Your Password\" Required></input>\n                        </div>\n                        <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"JMKW6vOtwRPVTs2m2QAKVfGywfZOF5XJLCAQoxeejkDXs8GXDyoVp1JWQX8jDwDA\">\n                        <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n                    </form>\n                </div>\n                <div class=\"modal-footer\">\n      </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"container my-3\">\n        <div class=\"jumbotron\">\n            <h1 class=\"display-4\">Welcome To BlogApp</h1>\n            <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>\n            <hr class=\"my-4\">\n            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>\n            <p class=\"lead\">\n                <a class=\"btn btn-primary btn-lg\" href=\"/blog\" role=\"button\">Go to Blog</a>\n            </p>\n        </div>\n    </div>\n    <div class=\"container\">\n        <h2>Popular Blog Post:</h2>\n        <div class=\"row g-0 border rounded overflow-hidden flex-md-row my-4 shadow-sm h-md-250 position-relative __web-inspector-hide-shortcut__\">\n            <div class=\"col p-4 d-flex flex-column position-static\">\n                <strong class=\"d-inline-block mb-2 text-primary-emphasis\">World</strong>\n                <h3 class=\"mb-0\">Featured post</h3>\n                <div class=\"mb-1 text-body-secondary\">Nov 12</div>\n                <p class=\"card-text mb-auto\">This is a wider card with supporting text below as a natural lead-in to additional content.</p>\n                <a href=\"#\" class=\"icon-link gap-1 icon-link-hover stretched-link\">\n        Continue reading\n        \n                    <svg class=\"bi\">\n                        <use xlink:href=\"#chevron-right\"></use>\n                    </svg>\n                </a>\n            </div>\n            <div class=\"col-auto d-none d-lg-block\">\n    </div>\n        </div>\n    </div>\n    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n</body>\n</html>"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/contact",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "johndoe@example.com\n",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "This is a test message.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/blog/django",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"blog",
+						"django"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

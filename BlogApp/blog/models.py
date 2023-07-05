@@ -12,6 +12,7 @@ class Post(models.Model):
     slug=models.CharField(max_length=130)
     content=models.TextField()
     timeStamp=models.DateTimeField(blank=True)
+    
 
     def __str__(self):
         return  self.title +' by '+self.author
